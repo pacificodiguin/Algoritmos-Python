@@ -1,5 +1,6 @@
+# Dicionário com o código de cores para resistores
 cores = {
-      "preto": (0, 1),
+    "preto": (0, 1),
     "marrom": (1, 10),
     "vermelho": (2, 100),
     "laranja": (3, 1000),
@@ -13,6 +14,7 @@ cores = {
     "prateado": (-2, 0.01)
 }
 
+# Dicionário para tolerância
 tolerancia = {
     "marrom": "±1%",
     "vermelho": "±2%",
@@ -24,14 +26,16 @@ tolerancia = {
     "prateado": "±10%"
 }
 
-cor1= input("Digite a 1° cor: ").lower()
-cor2 = input("Digite a 2° cor: ").lower()
-cor3 = input("Digite a 3° cor (multiplicador): ").lower()
-cor4 = input("Digite a 4° cor (tolerância): ").lower()
+# Entrada do usuário
+cor1 = input("Digite a 1ª cor: ").lower()
+cor2 = input("Digite a 2ª cor: ").lower()
+cor3 = input("Digite a 3ª cor (multiplicador): ").lower()
+cor4 = input("Digite a 4ª cor (tolerância): ").lower()
 
+# Cálculo do valor do resistor
 if cor1 in cores and cor2 in cores and cor3 in cores and cor4 in tolerancia:
     valor = (cores[cor1][0] * 10 + cores[cor2][0]) * cores[cor3][1]
     tol = tolerancia[cor4]
-    print(f"Valor do resistor: {valor} Ohn {tol}")
+    print(f"Valor do resistor: {valor}Ω {tol}")
 else:
-    print("Cor inválida")    
+    print("Cor inválida! Verifique as cores e tente novamente.")
